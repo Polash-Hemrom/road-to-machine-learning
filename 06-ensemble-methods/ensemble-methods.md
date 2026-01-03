@@ -208,7 +208,7 @@ Adaptive boosting - focuses on misclassified samples by increasing their weights
 2. For each iteration:
    - Train weak learner on weighted data
    - Calculate error rate
-   - Compute learner weight (α)
+   - Compute learner weight ($\alpha$)
    - Update instance weights (increase for misclassified)
    - Normalize weights
 3. Final prediction: Weighted vote of all learners
@@ -249,34 +249,28 @@ for i, estimator in enumerate(adaboost.estimators_[:10]):
 #### AdaBoost Mathematics
 
 **Weight Calculation:**
-```
-α_t = (1/2) × ln((1 - ε_t) / ε_t)
+$$\alpha_t = \frac{1}{2} \ln\left(\frac{1 - \varepsilon_t}{\varepsilon_t}\right)$$
 
 Where:
-- α_t: Weight of t-th weak learner
-- ε_t: Error rate of t-th weak learner
-```
+- $\alpha_t$: Weight of $t$-th weak learner
+- $\varepsilon_t$: Error rate of $t$-th weak learner
 
 **Instance Weight Update:**
-```
-w_i^(t+1) = w_i^(t) × exp(-α_t × y_i × h_t(x_i)) / Z_t
+$$w_i^{(t+1)} = \frac{w_i^{(t)} \exp(-\alpha_t \cdot y_i \cdot h_t(x_i))}{Z_t}$$
 
 Where:
-- w_i: Weight of instance i
-- y_i: True label
-- h_t(x_i): Prediction of t-th learner
-- Z_t: Normalization factor
-```
+- $w_i$: Weight of instance $i$
+- $y_i$: True label
+- $h_t(x_i)$: Prediction of $t$-th learner
+- $Z_t$: Normalization factor
 
 **Final Prediction:**
-```
-H(x) = sign(Σ α_t × h_t(x))
+$$H(x) = \text{sign}\left(\sum_t \alpha_t \cdot h_t(x)\right)$$
 
 Where:
-- H(x): Final prediction
-- h_t(x): Prediction of t-th learner
-- α_t: Weight of t-th learner
-```
+- $H(x)$: Final prediction
+- $h_t(x)$: Prediction of $t$-th learner
+- $\alpha_t$: Weight of $t$-th learner
 
 #### AdaBoost Components in Detail
 
@@ -1152,6 +1146,72 @@ print(f"Multi-Level Ensemble Accuracy: {accuracy_score(y_test, final_pred):.3f}"
 5. **Diversity matters**: Ensembles work best with diverse base models
 6. **Hyperparameter tuning**: Critical for ensemble performance
 7. **Computational cost**: Ensembles are more expensive but often worth it
+
+---
+
+## Resources and Further Learning
+
+### Books
+
+1. **"Ensemble Methods: Foundations and Algorithms"** - Zhi-Hua Zhou
+   - Comprehensive textbook on ensemble methods
+   - Covers theory and practice
+
+2. **"The Elements of Statistical Learning"** - Hastie, Tibshirani & Friedman
+   - [Free Online](https://web.stanford.edu/~hastie/ElemStatLearn/)
+   - Chapter 8: Model Inference and Averaging
+   - Chapter 15: Random Forests
+
+3. **"Hands-On Machine Learning"** - Aurélien Géron
+   - [Book Website](https://github.com/ageron/handson-ml2)
+   - Chapter 7: Ensemble Learning and Random Forests
+
+### Important Papers
+
+1. **"Random Forests"** - Breiman, 2001
+2. **"Gradient Boosting Machines"** - Friedman, 2001
+3. **"XGBoost: A Scalable Tree Boosting System"** - Chen & Guestrin, 2016
+4. **"LightGBM: A Highly Efficient Gradient Boosting Decision Tree"** - Ke et al., 2017
+5. **"CatBoost: Unbiased Boosting with Categorical Features"** - Prokhorenkova et al., 2018
+6. **"Stacked Generalization"** - Wolpert, 1992
+
+### Online Courses
+
+1. **Ensemble Methods** - Coursera (University of Washington)
+   - Part of Machine Learning Specialization
+   - Covers bagging, boosting, stacking
+
+2. **Kaggle Learn: Intro to Machine Learning**
+   - [Course Link](https://www.kaggle.com/learn/intro-to-machine-learning)
+   - Includes ensemble methods
+
+### Datasets
+
+1. **Kaggle Competitions**: Great for practicing ensemble methods
+   - [House Prices](https://www.kaggle.com/c/house-prices-advanced-regression-techniques)
+   - [Titanic](https://www.kaggle.com/c/titanic)
+   - [Porto Seguro's Safe Driver Prediction](https://www.kaggle.com/c/porto-seguro-safe-driver-prediction)
+
+2. **UCI Machine Learning Repository**
+   - [Dataset Collection](https://archive.ics.uci.edu/ml/datasets.php)
+
+### Tools and Libraries
+
+1. **scikit-learn**: Ensemble methods
+   - [Documentation](https://scikit-learn.org/)
+   - Random Forest, Gradient Boosting, Voting, Stacking
+
+2. **XGBoost**: Extreme Gradient Boosting
+   - [Documentation](https://xgboost.readthedocs.io/)
+   - Highly optimized gradient boosting
+
+3. **LightGBM**: Light Gradient Boosting Machine
+   - [Documentation](https://lightgbm.readthedocs.io/)
+   - Fast and memory-efficient
+
+4. **CatBoost**: Categorical Boosting
+   - [Documentation](https://catboost.ai/)
+   - Handles categorical features natively
 
 ---
 

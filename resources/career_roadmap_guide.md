@@ -8,6 +8,7 @@ This guide provides clear, role-specific learning paths for different careers in
 - [Data Scientist](#data-scientist)
 - [Machine Learning Engineer](#machine-learning-engineer)
 - [LLM Engineer (Large Language Models)](#llm-engineer-large-language-models)
+- [GenAI Solution Architect](#genai-solution-architect)
 - [Computer Vision Engineer](#computer-vision-engineer)
 - [AI Engineer (Generalist)](#ai-engineer-generalist)
 - [Data Engineer](#data-engineer)
@@ -274,6 +275,85 @@ This guide provides clear, role-specific learning paths for different careers in
 - Prompt engineering
 - LLM evaluation and benchmarking
 - AI agents (CrewAI, AutoGen, Langgraph)
+
+---
+
+## GenAI Solution Architect
+
+**Role Focus**: Design and implement production-ready Generative AI solutions, multi-agent systems, and RAG architectures. Lead technical teams and establish GenAI best practices at scale.
+
+### Core Learning Path
+
+| Phase | Modules | Focus Areas | Time Estimate |
+|-------|---------|-------------|---------------|
+| **Foundation** | 00-01 | Python, Data Fundamentals | 2-3 months |
+| **ML Basics** | 02-05 | ML Concepts, Evaluation, Optimization | 3-4 months |
+| **Deep Learning** | 09-10 | Neural Networks, Frameworks | 2-3 months |
+| **NLP & GenAI** | 12 | NLP, Transformers, Fine-tuning, RAG | 4-5 months |
+| **Production** | 13-14 | Model Deployment, MLOps | 3-4 months |
+| **Essential Skills** | 19 | SQL, Databases | 1-2 months |
+| **Total** | **9 modules** | **Complete Path** | **15-21 months** |
+
+### Essential Modules
+
+| Module | Topics | Priority |
+|--------|--------|----------|
+| **00-prerequisites** | Python, Math, Algorithms | ⭐⭐⭐ Critical |
+| **01-python-for-data-science** | NumPy, Pandas, APIs, Flask/FastAPI | ⭐⭐⭐ Critical |
+| **02-introduction-to-ml** | ML Concepts, Workflow | ⭐⭐⭐ Critical |
+| **05-model-evaluation-optimization** | Evaluation, Hyperparameter Tuning | ⭐⭐⭐ Critical |
+| **09-neural-networks-basics** | Neural Networks, Backpropagation | ⭐⭐⭐ Critical |
+| **10-deep-learning-frameworks** | PyTorch, TensorFlow | ⭐⭐⭐ Critical |
+| **12-natural-language-processing** | NLP, Transformers, Fine-tuning, RAG | ⭐⭐⭐ Critical |
+| **13-model-deployment** | Deployment, APIs, Cloud, Hyperscalers | ⭐⭐⭐ Critical |
+| **14-mlops-basics** | MLOps, CI/CD, Experiment Tracking | ⭐⭐⭐ Critical |
+| **19-sql-database-fundamentals** | SQL, Databases, Vector Stores | ⭐⭐ Important |
+
+### Specialized Skills
+
+**Required Expertise:**
+- RAG (Retrieval Augmented Generation) architectures
+- Multi-agent systems (CrewAI, AutoGen, Langgraph)
+- MCP (Model Context Protocol)
+- A2A (Agent-to-Agent) communication
+- Production GenAI deployment on hyperscalers (AWS, GCP, Azure)
+- Scaling strategies for GenAI applications
+- Cost optimization for LLM inference
+- Model serving and orchestration
+
+### Recommended Projects
+
+| Level | Projects | Skills Practiced |
+|-------|----------|------------------|
+| **Intermediate** | Chatbot Development, Sentiment Analysis | NLP, Transformers, RAG |
+| **Advanced** | End-to-End ML Pipeline, Model Deployment & Serving | Full Stack GenAI, Production Deployment |
+
+### Essential Resources
+
+| Resource Type | Files |
+|--------------|-------|
+| **Core Skills** | [Langchain Guide](langchain_guide.md), [LlamaIndex Guide](llamaindex_guide.md), [AI Agents Guide](ai_agents_guide.md), [GenAI Production Deployment Guide](genai_production_deployment.md) |
+| **Specialized** | [Transformer Fine-Tuning Guide](transformer_fine_tuning_guide.md), [MLFlow Comprehensive Guide](mlflow_comprehensive_guide.md), [Model Deployment Cheatsheet](model_deployment_cheatsheet.md) |
+| **Tools** | [Docker Tutorial](docker_tutorial.md), [Web Scraping Guide](web_scraping_guide.md), [Git Guide](git_guide.md) |
+| **Career** | [Career & Portfolio Guide](career_portfolio.md), [Interview Prep](interview_prep.md) |
+
+### Skills Checklist
+
+- Generative AI architectures (RAG, multi-agent systems)
+- RAG system design and implementation
+- Multi-agent orchestration (CrewAI, AutoGen, Langgraph)
+- MCP (Model Context Protocol) implementation
+- A2A (Agent-to-Agent) communication patterns
+- Production GenAI deployment (AWS SageMaker, GCP Vertex AI, Azure ML)
+- Scaling GenAI applications (horizontal scaling, model parallelism, batching)
+- Cost optimization for LLM inference
+- Model serving and API development (FastAPI, Flask)
+- Containerization and orchestration (Docker, Kubernetes)
+- MLOps for GenAI (experiment tracking, model registry, monitoring)
+- Vector databases and embeddings
+- Prompt engineering and optimization
+- Fine-tuning transformer models (T5, BERT, GPT)
+- Stakeholder communication and technical leadership
 
 ---
 
@@ -690,6 +770,7 @@ This guide provides clear, role-specific learning paths for different careers in
 | **Data Scientist** | Predictive Models | ML, Statistics, Python | Classification, Forecasting |
 | **ML Engineer** | Production ML | Software Engineering, MLOps | Model Deployment, APIs |
 | **LLM Engineer** | Language Models | Transformers, NLP, RAG | Chatbots, RAG Systems |
+| **GenAI Solution Architect** | Production GenAI | RAG, Multi-Agent, MCP, A2A, Hyperscalers | Enterprise GenAI Solutions |
 | **CV Engineer** | Image Processing | CNNs, Object Detection | Image Classification, Detection |
 | **AI Engineer** | Generalist AI | ML, DL, CV, NLP | Multi-domain Projects |
 | **Data Engineer** | Data Infrastructure | ETL, Databases, Spark | Data Pipelines, Warehouses |

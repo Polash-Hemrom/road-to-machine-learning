@@ -64,7 +64,7 @@
 - [Getting Started](#getting-started)
 - [Repository Structure](#repository-structure)
 - [Resources](#resources)
-- [Career Roadmaps](#career-roadmaps)
+- [Career Paths](#career-paths)
 - [Contributing](#contributing)
 
 ## Overview
@@ -78,9 +78,9 @@ This repository provides a structured learning path for machine learning, organi
 
 ## Learning Path
 
-**Note on Module Numbering**: Module numbers (00-21) don't strictly follow the learning path order. The phases below represent the recommended learning sequence. Some modules can be learned in parallel or in different orders based on your goals. See individual module READMEs for prerequisites and suggested learning order.
+**Note on Module Numbering**: Module numbers (00-24) don't strictly follow the learning path order. The phases below represent the recommended learning sequence. Some modules can be learned in parallel or in different orders based on your goals. See individual module READMEs for prerequisites and suggested learning order.
 
-**Time Estimates**: Realistic completion time is **14-20 months (full-time, 30-40 hrs/week)** or **28-35 months (part-time, 10-15 hrs/week)** for comprehensive coverage including all 25 modules and 23 projects. See [FAQ section](#common-questions--learning-guide) for detailed breakdown.
+**Time Estimates**: Realistic completion time is **14-20 months (full-time, 30-40 hrs/week)** or **28-35 months (part-time, 10-15 hrs/week)** for comprehensive coverage including all 25 modules and 23 projects. See [FAQ section](#common-questions-learning-guide) for detailed breakdown.
 
 ## Learning Path Overview
 
@@ -320,6 +320,8 @@ This repository provides a structured learning path for machine learning, organi
   - REST APIs with Flask/FastAPI
   - Docker for ML
   - Cloud Deployment (AWS, GCP, Azure)
+  - Production Server Setup (NGINX, SSL/TLS, Domain Configuration)
+  - Security Best Practices (Rate Limiting, Authentication, Input Validation)
   - AWS SageMaker Comprehensive Guide
   - A/B Testing (Statistical Significance, Multi-Armed Bandits, Sequential Testing)
   - Model Monitoring
@@ -765,6 +767,13 @@ road-to-ml/
 | [LlamaIndex Guide](resources/llamaindex_guide.md) | Comprehensive LlamaIndex guide: data indexing, querying, retrieval, chat engines, and advanced generative AI projects |
 | [AI Agents Guide](resources/ai_agents_guide.md) | Complete guide to AI agents: CrewAI, AutoGen, Langgraph, AutoGPT, MCP (Model Context Protocol), and A2A (Agent-to-Agent) communication |
 | [GenAI Production Deployment Guide](resources/genai_production_deployment.md) | Comprehensive guide to deploying GenAI at scale: RAG architectures, multi-agent systems, hyperscaler deployment (AWS, GCP, Azure), scaling strategies, monitoring, and cost optimization |
+| [Generative AI Comprehensive Guide](resources/generative_ai_comprehensive_guide.md) | Complete overview of Generative AI: LLMs, LangChain, RAG, AI Agents, Vector Databases, Multi-Agent Systems, and building production-ready GenAI applications |
+
+#### System Design & Architecture
+
+| Guide | Description |
+|-------|-------------|
+| [ML System Design Guide](resources/ml_system_design_guide.md) | Comprehensive guide to designing scalable ML systems: requests/responses, latency, throughput, load balancing, caching, vertical/horizontal scaling, databases, replication, sharding, message queues, stateless/stateful architecture, high availability, and monitoring |
 
 #### Business & Communication
 
@@ -1069,7 +1078,7 @@ By completing this roadmap, you'll be able to:
 |--------|-------|---------|
 | **Learning Modules** | 25 | Modules 00-24 covering all ML topics from basics to advanced |
 | **Projects** | 23 | 6 beginner + 8 intermediate + 9 advanced with complete code and READMEs |
-| **Resource Guides** | 48 | Cheatsheets, tutorials, and career guides |
+| **Resource Guides** | 50 | Cheatsheets, tutorials, and career guides |
 | **Markdown Files** | 207+ | Comprehensive content, code examples, and exercises |
 | **Learning Time (Full-Time)** | 14-20 months | 30-40 hours/week for comprehensive coverage |
 | **Learning Time (Part-Time)** | 28-35 months | 10-15 hours/week for comprehensive coverage |
@@ -1100,7 +1109,7 @@ This repository does not collect, store, or process any personal data. It is a s
 
 *Remember: The journey of a thousand miles begins with a single step. Start with module 00 and keep going!*
 
-[Back to Top](#road-to-ml-from-zero-to-hero)
+[Back to Top](#)
 
 </div>
 

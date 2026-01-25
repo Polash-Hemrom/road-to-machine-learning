@@ -10,7 +10,7 @@
 
 **A comprehensive, step-by-step guide to learning Machine Learning from absolute basics to advanced topics**
 
-*Perfect for beginners • 25 Learning Modules • 23 Real-World Projects • Production-Ready Skills*
+*Perfect for beginners • 26 Learning Modules • 23 Real-World Projects • Production-Ready Skills*
 
 [Get Started](#getting-started) • [Learning Path](#learning-path) • [Projects](#phase-8-projects) • [Contribute](#contributing)
 
@@ -38,13 +38,13 @@
 | **Data Analyst** | Insights & Reports | 8-12 months | 00, 01, 19, 20, 21 | [View Guide →](resources/career_roadmap_guide.md#data-analyst) |
 | **Data Scientist** | Predictive Models | 13-20 months | 00-08, 15, 19-21 | [View Guide →](resources/career_roadmap_guide.md#data-scientist) |
 | **ML Engineer** | Production ML | 17-26 months | 00-10, 13-14, 19-21 | [View Guide →](resources/career_roadmap_guide.md#machine-learning-engineer) |
-| **LLM Engineer** | Language Models | 17-24 months | 00-01, 05, 09-10, 12-14, 19 | [View Guide →](resources/career_roadmap_guide.md#llm-engineer-large-language-models) |
-| **GenAI Solution Architect** | Production GenAI | 15-21 months | 00-01, 02, 05, 09-10, 12-14, 19 | [View Guide →](resources/career_roadmap_guide.md#genai-solution-architect) |
+| **LLM Engineer** | Language Models | 17-24 months | 00-01, 05, 09-10, 12, 25, 13-14, 19 | [View Guide →](resources/career_roadmap_guide.md#llm-engineer-large-language-models) |
+| **GenAI Solution Architect** | Production GenAI | 15-21 months | 00-01, 02, 05, 09-10, 12, 25, 13-14, 19 | [View Guide →](resources/career_roadmap_guide.md#genai-solution-architect) |
 | **Computer Vision Engineer** | Image Processing | 16-25 months | 00-01, 04-05, 09-11, 13-14, 19, 21 | [View Guide →](resources/career_roadmap_guide.md#computer-vision-engineer) |
-| **AI Engineer** | Generalist AI | 25-38 months | 00-15, 19-21, 22-24 | [View Guide →](resources/career_roadmap_guide.md#ai-engineer-generalist) |
+| **AI Engineer** | Generalist AI | 25-38 months | 00-15, 19-21, 22-24, 25 | [View Guide →](resources/career_roadmap_guide.md#ai-engineer-generalist) |
 | **Data Engineer** | Data Infrastructure | 14-20 months | 00-01, 13-14, 19-20 | [View Guide →](resources/career_roadmap_guide.md#data-engineer) |
-| **MLOps Engineer** | ML Operations | 16-24 months | 00-01, 05, 09-10, 13-14, 19 | [View Guide →](resources/career_roadmap_guide.md#mlops-engineer) |
-| **Research Scientist** | Research & Innovation | 24-34 months | 00-12, 15, 19, 21, 22-24 | [View Guide →](resources/career_roadmap_guide.md#research-scientist) |
+| **MLOps Engineer** | ML Operations | 16-24 months | 00-01, 05, 09-10, 12, 25, 13-14, 19 | [View Guide →](resources/career_roadmap_guide.md#mlops-engineer) |
+| **Research Scientist** | Research & Innovation | 24-34 months | 00-12, 15, 19, 21, 22-24, 25 | [View Guide →](resources/career_roadmap_guide.md#research-scientist) |
 | **BI Analyst** | Business Intelligence | 10-15 months | 00-01, 19-21 | [View Guide →](resources/career_roadmap_guide.md#business-intelligence-analyst) |
 
 **Each role-specific guide includes:**
@@ -78,9 +78,9 @@ This repository provides a structured learning path for machine learning, organi
 
 ## Learning Path
 
-**Note on Module Numbering**: Module numbers (00-24) don't strictly follow the learning path order. The phases below represent the recommended learning sequence. Some modules can be learned in parallel or in different orders based on your goals. See individual module READMEs for prerequisites and suggested learning order.
+**Note on Module Numbering**: Module numbers (00-24, 25) don't strictly follow the learning path order. The phases below represent the recommended learning sequence. Some modules can be learned in parallel or in different orders based on your goals. See individual module READMEs for prerequisites and suggested learning order.
 
-**Time Estimates**: Realistic completion time is **14-20 months (full-time, 30-40 hrs/week)** or **28-35 months (part-time, 10-15 hrs/week)** for comprehensive coverage including all 25 modules and 23 projects. See [FAQ section](#common-questions-learning-guide) for detailed breakdown.
+**Time Estimates**: Realistic completion time is **15-22 months (full-time, 30-40 hrs/week)** or **30-39 months (part-time, 10-15 hrs/week)** for comprehensive coverage including all 26 modules and 23 projects. See [FAQ section](#common-questions-learning-guide) for detailed breakdown.
 
 ## Learning Path Overview
 
@@ -93,11 +93,12 @@ This repository provides a structured learning path for machine learning, organi
 | **Phase 4** | 08 | Unsupervised Learning | 1 month | 2 months |
 | **Phase 5** | 09-10 | Deep Learning Fundamentals | 2 months | 4 months |
 | **Phase 6** | 11-12, 15 | Specialized Deep Learning | 3-4 months | 6-8 months |
-| **Phase 6.5** | 19-21 | Essential Skills (SQL, Imbalanced Data, Explainability) | 1-2 months | 2-4 months |
-| **Phase 7** | 13-14 | Production & MLOps | 2-3 months | 4-6 months |
-| **Phase 8** | 16-18 | Projects (23 total) | 4-6 months | 8-12 months |
-| **Phase 9** | 22-24 | Advanced Specialized Topics (RL, GNNs, Audio) | 2-3 months | 4-6 months |
-| **Total** | 25 modules | Complete Path | **14-20 months** | **28-35 months** |
+| **Phase 7** | 25 | Generative AI & Modern LLMs | 1-2 months | 2-4 months |
+| **Phase 7.5** | 19-21 | Essential Skills (SQL, Imbalanced Data, Explainability) | 1-2 months | 2-4 months |
+| **Phase 8** | 13-14 | Production & MLOps | 2-3 months | 4-6 months |
+| **Phase 9** | 16-18 | Projects (23 total) | 4-6 months | 8-12 months |
+| **Phase 10** | 22-24 | Advanced Specialized Topics (RL, GNNs, Audio) | 2-3 months | 4-6 months |
+| **Total** | 26 modules | Complete Path | **15-22 months** | **30-39 months** |
 
 ### Phase 0: Foundation (Prerequisites)
 **Goal**: Build the mathematical and programming foundation needed for ML
@@ -108,6 +109,7 @@ This repository provides a structured learning path for machine learning, organi
   - Iterators & Generators (Memory-efficient data processing)
   - GUI Development with tkinter
   - Essential Mathematics (Linear Algebra including Tensors, Statistics, Calculus basics)
+  - Computational Math: Python code examples alongside theory for better intuition
   - Environment Setup (Python, Jupyter, Virtual Environments)
 
 ### Phase 1: Data Fundamentals
@@ -116,6 +118,8 @@ This repository provides a structured learning path for machine learning, organi
 - **01-python-for-data-science**
   - NumPy: Arrays, operations, broadcasting
   - Pandas: DataFrames, data manipulation, cleaning
+  - Polars: High-performance data manipulation (10-100x faster than Pandas for large datasets)
+  - Dask: Parallel Pandas for larger-than-memory datasets
   - Matplotlib & Seaborn: Data visualization
   - Plotly & Dash: Interactive visualizations and web applications
   - Streamlit: Building interactive dashboards and ML applications
@@ -149,6 +153,7 @@ This repository provides a structured learning path for machine learning, organi
   - Naive Bayes (Gaussian, Multinomial, Bernoulli)
   - Multi-Class Classification Strategies (One-vs-Rest, One-vs-One)
   - Evaluation Metrics (Accuracy, Precision, Recall, F1, ROC-AUC)
+  - Bias Auditing and Fairness (Fairlearn, demographic parity, equalized odds)
 
 - **05-model-evaluation-optimization**
   - Train/Validation/Test Split
@@ -203,6 +208,7 @@ This repository provides a structured learning path for machine learning, organi
   - PyTorch Basics
   - Building and Training Neural Networks
   - Model Saving and Loading
+  - Model Optimization (Quantization, TensorRT, ONNX, GGML/GGUF for edge deployment)
 
 ### Phase 6: Specialized Deep Learning
 **Goal**: Master domain-specific deep learning applications
@@ -236,6 +242,36 @@ This repository provides a structured learning path for machine learning, organi
   - RAG (Retrieval Augmented Generation)
   - Sentiment Analysis
 
+### Phase 7: Generative AI & Modern LLM Applications
+**Goal**: Master modern LLM applications and GenAI engineering
+
+**Why This Phase:**
+The industry has rapidly shifted from training models from scratch to using pre-trained foundational models (LLMs). This phase bridges traditional NLP with modern LLM application development and is now fundamental enough to come before Production/Deployment.
+
+**Key Topics Covered:**
+- **Prompt Engineering**: Comprehensive techniques for effective LLM interaction (zero-shot, few-shot, chain-of-thought)
+- **Vector Databases**: Pinecone, ChromaDB, Weaviate, FAISS for semantic search and similarity matching
+- **RAG (Retrieval-Augmented Generation)**: End-to-end implementation for knowledge-augmented LLMs
+- **LLM Agents**: LangChain, LangGraph, AutoGPT for building autonomous AI agents
+- **Multi-Agent Systems**: Coordinated workflows with multiple specialized agents
+- **Building Production GenAI Apps**: Real-world deployment patterns and best practices
+
+**Module:**
+- **25-generative-ai-llms**: Complete guide with practical examples, code notebooks, and hands-on projects
+
+**Learning Resources:**
+- [Generative AI Comprehensive Guide](resources/generative_ai_comprehensive_guide.md) - Complete overview
+- [RAG Comprehensive Guide](resources/rag_comprehensive_guide.md) - RAG implementation details
+- [LangChain Guide](resources/langchain_guide.md) - LangChain framework
+- [AI Agents Guide](resources/ai_agents_guide.md) - AI agents and multi-agent systems
+
+**When to Learn:**
+- After Phase 6 (Specialized Deep Learning) - recommended
+- In parallel with Module 12 (NLP) - if you want to learn modern approaches early
+- Before Phase 8 (Production) - helps with GenAI deployment
+
+**Time Estimate:** 1-2 months (full-time) or 2-4 months (part-time)
+
 - **15-time-series-analysis**
   - Time Series Fundamentals (Trend, Seasonality, Stationarity)
   - Statistical Methods (ARIMA, SARIMA, Exponential Smoothing)
@@ -244,7 +280,7 @@ This repository provides a structured learning path for machine learning, organi
   - Evaluation and Validation
   - **Note**: Module 15 is placed here logically but numbered after modules 13-14. It can be learned in parallel with modules 11-12 or after Phase 5.
 
-### Phase 9: Advanced Specialized Topics
+### Phase 10: Advanced Specialized Topics
 **Goal**: Master advanced specialized ML domains
 
 **Note**: These modules cover advanced topics that build on deep learning fundamentals. Learn these after completing Phase 5 (Deep Learning Fundamentals) and Phase 6 (Specialized Deep Learning).
@@ -274,7 +310,7 @@ This repository provides a structured learning path for machine learning, organi
   - Music Generation
   - Voice Processing (VAD, Speaker ID, Enhancement)
 
-### Phase 6.5: Essential Data Science Skills
+### Phase 7.5: Essential Data Science Skills
 **Goal**: Master critical skills for real-world ML applications
 
 **Note**: These modules can be learned in parallel with other phases or integrated earlier in your learning journey:
@@ -310,16 +346,17 @@ This repository provides a structured learning path for machine learning, organi
   - Regulatory Compliance and Ethical AI
   - **Suggested Timing**: Best learned after Phase 3 (Advanced ML) or Phase 5 (Deep Learning)
 
-### Phase 7: Production & Deployment
+### Phase 8: Production & Deployment
 **Goal**: Learn to deploy ML models in production
 
-**Note**: Modules 13-14 are numbered before modules 15-18 but logically come after specialized deep learning topics. Learn these after you have built and trained models.
+**Note**: Modules 13-14 are numbered before modules 15-18 but logically come after specialized deep learning and generative AI topics. Learn these after you have built and trained models.
 
 - **13-model-deployment**
   - Model Serialization
   - REST APIs with Flask/FastAPI
   - Docker for ML
-  - Cloud Deployment (AWS, GCP, Azure)
+  - Cloud Deployment (AWS, GCP, Azure, Hugging Face Spaces)
+  - Hugging Face Spaces: Free model hosting for portfolio projects
   - Production Server Setup (NGINX, SSL/TLS, Domain Configuration)
   - Security Best Practices (Rate Limiting, Authentication, Input Validation)
   - AWS SageMaker Comprehensive Guide
@@ -329,16 +366,17 @@ This repository provides a structured learning path for machine learning, organi
 - **14-mlops-basics**
   - Version Control for ML (DVC, MLflow)
   - CI/CD for ML
-  - Experiment Tracking
+  - Experiment Tracking (MLflow, Weights & Biases with advanced features)
   - Model Registry
+  - Weights & Biases: Hyperparameter sweeps, model artifacts, team collaboration
   - Cookiecutter for Data Science
   - Apache Kafka for Data Streaming
   - Apache Spark for Big Data Processing
 
-### Phase 8: Projects
+### Phase 9: Projects
 **Goal**: Apply knowledge through real-world projects
 
-**Note**: Projects are numbered 16-18 but should be worked on throughout your learning journey. Start beginner projects after Phase 2, intermediate after Phase 3-4, and advanced after Phase 6-7.
+**Note**: Projects are numbered 16-18 but should be worked on throughout your learning journey. Start beginner projects after Phase 2, intermediate after Phase 3-4, and advanced after Phase 7-8.
 
 #### Projects Summary
 
@@ -384,7 +422,7 @@ This repository provides a structured learning path for machine learning, organi
 | 1 | Image Classification (CIFAR-10) | CNNs, Transfer Learning, Data Augmentation | 1-2 weeks | ✓ Available |
 | 2 | Sentiment Analysis on Reviews | NLP, RNNs/LSTMs, Transformers | 1-2 weeks | ✓ Available |
 | 3 | Time Series Forecasting (Advanced) | Advanced Time Series, Deep Learning | 1-2 weeks | ✓ Available |
-| 4 | Chatbot Development | NLP, Sequence-to-Sequence, Transformers | 1-2 weeks | ✓ Available |
+| 4 | LLM Chatbot & RAG System | Modern LLMs, RAG, Vector Databases, LangChain | 2-3 weeks | ✓ Available |
 | 5 | Object Detection | Computer Vision, YOLO, R-CNN | 1-2 weeks | ✓ Available |
 | 6 | End-to-End ML Pipeline | Full ML Pipeline, MLOps | 2-3 weeks | ✓ Available |
 | 7 | Generative Model (GAN/VAE) | GANs, VAEs, Image Generation | 1-2 weeks | ✓ Available |
@@ -606,6 +644,13 @@ road-to-ml/
     audio-speech-processing-advanced-topics.md
     audio-speech-processing-project-tutorial.md
     audio-speech-processing-quick-reference.md
+    README.md
+
+ 25-generative-ai-llms/
+    generative-ai-llms.md
+    generative-ai-llms-advanced-topics.md
+    generative-ai-llms-project-tutorial.md
+    generative-ai-llms-quick-reference.md
     README.md
 
  16-projects-beginner/
@@ -920,7 +965,7 @@ A: Python 3.9 or 3.10 recommended. Most libraries support these versions well. A
 A: Do at least:
 - 2-3 beginner projects (after Phase 2)
 - 3-4 intermediate projects (after Phase 4)
-- 2-3 advanced projects (after Phase 7)
+- 2-3 advanced projects (after Phase 8)
 Focus on projects relevant to your career goals.
 
 **Q: Can I use my own datasets?**  
@@ -1076,12 +1121,12 @@ By completing this roadmap, you'll be able to:
 
 | Metric | Count | Details |
 |--------|-------|---------|
-| **Learning Modules** | 25 | Modules 00-24 covering all ML topics from basics to advanced |
+| **Learning Modules** | 26 | Modules 00-24, 25 covering all ML topics from basics to advanced including Generative AI |
 | **Projects** | 23 | 6 beginner + 8 intermediate + 9 advanced with complete code and READMEs |
 | **Resource Guides** | 50 | Cheatsheets, tutorials, and career guides |
 | **Markdown Files** | 207+ | Comprehensive content, code examples, and exercises |
-| **Learning Time (Full-Time)** | 14-20 months | 30-40 hours/week for comprehensive coverage |
-| **Learning Time (Part-Time)** | 28-35 months | 10-15 hours/week for comprehensive coverage |
+| **Learning Time (Full-Time)** | 15-22 months | 30-40 hours/week for comprehensive coverage |
+| **Learning Time (Part-Time)** | 30-39 months | 10-15 hours/week for comprehensive coverage |
 | **Prerequisites** | Zero | Start from scratch - no prior experience needed! |
 
 ## Disclaimer

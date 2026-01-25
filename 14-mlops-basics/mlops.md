@@ -406,47 +406,222 @@ with mlflow.start_run():
     mlflow.pytorch.log_model(model, "model")
 ```
 
-### Weights & Biases
+### Weights & Biases (W&B)
 
-Beautiful UI for experiment tracking.
+**Weights & Biases** is an industry-standard experiment tracking and visualization platform, especially popular for deep learning projects. It provides beautiful dashboards, hyperparameter sweeps, and team collaboration features.
+
+**Why W&B?**
+- Industry standard for deep learning teams
+- Beautiful, interactive visualizations
+- Hyperparameter optimization (sweeps)
+- Model versioning and artifacts
+- Team collaboration and sharing
+- Free for personal use
+
+**Installation:**
+```bash
+pip install wandb
+wandb login  # First time setup
+```
+
+**Basic Usage:**
+```python
+import wandb
+
+# Initialize project
+wandb.init(
+    project="my-ml-project",
+    name="experiment-1",
+    config={
+        "learning_rate": 0.001,
+        "epochs": 10,
+        "batch_size": 32,
+        "optimizer": "adam",
+        "model_architecture": "ResNet50"
+    }
+)
+
+# Log metrics during training
+for epoch in range(10):
+    train_loss = train_one_epoch()
+    val_loss = validate()
+    accuracy = evaluate()
+    
+    wandb.log({
+        "epoch": epoch,
+        "train_loss": train_loss,
+        "val_loss": val_loss,
+        "accuracy": accuracy
+    })
+
+# Log model
+wandb.log_model(model, "model")
+
+# Log plots
+import matplotlib.pyplot as plt
+fig, ax = plt.subplots()
+ax.plot(history['loss'])
+wandb.log({"loss_plot": wandb.Image(fig)})
+
+wandb.finish()
+```
+
+**Advanced Features:**
+
+**1. Hyperparameter Sweeps (Automated Search)**
 
 ```python
-try:
-    import wandb
-    
-    # Initialize
-    wandb.init(
-        project="my-project",
-        config={
-            "learning_rate": 0.001,
-            "epochs": 10,
-            "batch_size": 32
+# Define sweep configuration
+sweep_config = {
+    "method": "bayes",  # or "grid", "random"
+    "metric": {
+        "name": "val_accuracy",
+        "goal": "maximize"
+    },
+    "parameters": {
+        "learning_rate": {
+            "min": 0.0001,
+            "max": 0.1,
+            "distribution": "log_uniform"
+        },
+        "batch_size": {
+            "values": [16, 32, 64, 128]
+        },
+        "optimizer": {
+            "values": ["adam", "sgd", "rmsprop"]
+        },
+        "dropout": {
+            "min": 0.0,
+            "max": 0.5
         }
+    }
+}
+
+# Initialize sweep
+sweep_id = wandb.sweep(sweep_config, project="my-project")
+
+# Run sweep
+def train():
+    wandb.init()
+    config = wandb.config
+    
+    # Use config parameters
+    model = create_model(
+        learning_rate=config.learning_rate,
+        batch_size=config.batch_size,
+        optimizer=config.optimizer,
+        dropout=config.dropout
     )
     
-    # Log metrics during training
-    for epoch in range(10):
-        train_loss = train_one_epoch()
-        val_loss = validate()
-        wandb.log({
-            "epoch": epoch,
-            "train_loss": train_loss,
-            "val_loss": val_loss
-        })
-    
-    # Log model
-    wandb.log_model(model, "model")
-    
-    # Log plots
-    import matplotlib.pyplot as plt
-    fig, ax = plt.subplots()
-    ax.plot(history['loss'])
-    wandb.log({"loss_plot": wandb.Image(fig)})
-    
-    wandb.finish()
-except ImportError:
-    print("Install wandb: pip install wandb")
+    # Train and log
+    train_model(model)
+
+# Run multiple experiments
+wandb.agent(sweep_id, train, count=20)  # Run 20 experiments
 ```
+
+**2. Model Artifacts (Versioning)**
+
+```python
+# Create artifact
+artifact = wandb.Artifact("trained-model", type="model")
+artifact.add_file("model.pkl")
+artifact.add_dir("checkpoints/")
+wandb.log_artifact(artifact)
+
+# Use artifact in another run
+run = wandb.init(project="inference")
+artifact = run.use_artifact("trained-model:latest")
+artifact_dir = artifact.download()
+
+# Load model
+import joblib
+model = joblib.load(f"{artifact_dir}/model.pkl")
+```
+
+**3. Tables (Data Logging)**
+
+```python
+# Log predictions table
+table = wandb.Table(columns=["image", "prediction", "ground_truth"])
+for img, pred, gt in zip(images, predictions, ground_truths):
+    table.add_data(wandb.Image(img), pred, gt)
+wandb.log({"predictions": table})
+```
+
+**4. Media Logging**
+
+```python
+# Log images
+wandb.log({"examples": [wandb.Image(img) for img in sample_images]})
+
+# Log audio
+wandb.log({"audio": wandb.Audio(audio_data, sample_rate=16000)})
+
+# Log video
+wandb.log({"video": wandb.Video(video_array, fps=30)})
+```
+
+**5. Team Collaboration**
+
+```python
+# Share runs with team
+wandb.init(
+    project="team-project",
+    entity="your-team-name",  # Team workspace
+    tags=["experiment", "baseline"]
+)
+
+# Compare runs
+# Use W&B UI to compare metrics across experiments
+# Filter by tags, config values, etc.
+```
+
+**6. Integration with PyTorch/TensorFlow**
+
+```python
+# PyTorch Lightning integration
+from pytorch_lightning.loggers import WandbLogger
+
+wandb_logger = WandbLogger(project="my-project")
+trainer = Trainer(logger=wandb_logger)
+
+# TensorFlow/Keras integration
+import tensorflow as tf
+from wandb.keras import WandbCallback
+
+model.fit(
+    X_train, y_train,
+    callbacks=[WandbCallback()],
+    validation_data=(X_val, y_val)
+)
+```
+
+**Best Practices:**
+
+1. **Organize Projects**: Use separate projects for different experiments
+2. **Use Tags**: Tag runs for easy filtering (e.g., "baseline", "experiment", "production")
+3. **Log Everything**: Log configs, metrics, models, visualizations
+4. **Compare Runs**: Use W&B UI to compare different experiments
+5. **Document**: Add notes to runs explaining what you tried
+
+**W&B vs MLflow:**
+
+| Feature | W&B | MLflow |
+|---------|-----|--------|
+| UI | Beautiful, modern | Functional |
+| Sweeps | Excellent | Basic |
+| Deep Learning | Industry standard | Good |
+| Model Registry | Artifacts | Model Registry |
+| Team Features | Strong | Good |
+| Self-hosted | Limited | Yes |
+
+**When to Use W&B:**
+- Deep learning projects
+- Need hyperparameter sweeps
+- Team collaboration
+- Beautiful visualizations
+- Industry-standard tooling
 
 ---
 
@@ -872,6 +1047,237 @@ train:
   only:
     - main
 ```
+
+**AWS CodeBuild and CodePipeline for ML:**
+
+AWS CodeBuild and CodePipeline provide fully managed CI/CD services for ML workloads.
+
+**AWS CodeBuild for ML:**
+
+```yaml
+# buildspec.yml
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
+      - echo Installing dependencies...
+      - pip install -r requirements.txt
+      - pip install pytest pytest-cov black flake8
+  
+  build:
+    commands:
+      - echo Running code quality checks...
+      - black --check .
+      - flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+      - echo Running unit tests...
+      - pytest tests/unit/ --cov=src --cov-report=xml --cov-report=term
+      - echo Running integration tests...
+      - pytest tests/integration/
+      - echo Validating data...
+      - python scripts/validate_data.py
+      - echo Training model...
+      - python train.py
+      - echo Evaluating model...
+      - python evaluate.py
+      - echo Building Docker image...
+      - docker build -t $IMAGE_REPO_NAME:$IMAGE_TAG .
+      - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
+  
+  post_build:
+    commands:
+      - echo Pushing Docker image to ECR...
+      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
+      - echo Writing image definitions file...
+      - printf '[{"name":"ml-api","imageUri":"%s"}]' $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG > imagedefinitions.json
+
+artifacts:
+  files:
+    - imagedefinitions.json
+    - model.pkl
+    - metrics.json
+```
+
+**Create CodeBuild Project:**
+
+```bash
+# Create build project
+aws codebuild create-project \
+  --name ml-api-build \
+  --source type=GITHUB,location=https://github.com/user/repo.git \
+  --artifacts type=S3,location=my-build-artifacts \
+  --environment type=LINUX_CONTAINER,image=aws/codebuild/standard:5.0,computeType=BUILD_GENERAL1_MEDIUM \
+  --service-role arn:aws:iam::account-id:role/codebuild-role
+```
+
+**AWS CodePipeline for ML:**
+
+```json
+{
+  "pipeline": {
+    "name": "ml-api-pipeline",
+    "roleArn": "arn:aws:iam::account-id:role/codepipeline-role",
+    "artifactStore": {
+      "type": "S3",
+      "location": "my-pipeline-artifacts"
+    },
+    "stages": [
+      {
+        "name": "Source",
+        "actions": [
+          {
+            "name": "SourceAction",
+            "actionTypeId": {
+              "category": "Source",
+              "owner": "AWS",
+              "provider": "CodeCommit",
+              "version": "1"
+            },
+            "outputArtifacts": [
+              {
+                "name": "SourceOutput"
+              }
+            ],
+            "configuration": {
+              "RepositoryName": "ml-api-repo",
+              "BranchName": "main"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Build",
+        "actions": [
+          {
+            "name": "BuildAction",
+            "actionTypeId": {
+              "category": "Build",
+              "owner": "AWS",
+              "provider": "CodeBuild",
+              "version": "1"
+            },
+            "inputArtifacts": [
+              {
+                "name": "SourceOutput"
+              }
+            ],
+            "outputArtifacts": [
+              {
+                "name": "BuildOutput"
+              }
+            ],
+            "configuration": {
+              "ProjectName": "ml-api-build"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Test",
+        "actions": [
+          {
+            "name": "ModelValidation",
+            "actionTypeId": {
+              "category": "Test",
+              "owner": "AWS",
+              "provider": "CodeBuild",
+              "version": "1"
+            },
+            "inputArtifacts": [
+              {
+                "name": "BuildOutput"
+              }
+            ],
+            "configuration": {
+              "ProjectName": "ml-model-validation"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Deploy",
+        "actions": [
+          {
+            "name": "DeployAction",
+            "actionTypeId": {
+              "category": "Deploy",
+              "owner": "AWS",
+              "provider": "ECS",
+              "version": "1"
+            },
+            "inputArtifacts": [
+              {
+                "name": "BuildOutput"
+              }
+            ],
+            "configuration": {
+              "ClusterName": "ml-api-cluster",
+              "ServiceName": "ml-api-service",
+              "FileName": "imagedefinitions.json"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+**CodePipeline with Manual Approval:**
+
+```json
+{
+  "name": "ManualApproval",
+  "actions": [
+    {
+      "name": "ApproveDeployment",
+      "actionTypeId": {
+        "category": "Approval",
+        "owner": "AWS",
+        "provider": "Manual",
+        "version": "1"
+      },
+      "configuration": {
+        "CustomData": "Review model metrics before deploying to production"
+      }
+    }
+  ]
+}
+```
+
+**Security Best Practices for CI/CD:**
+
+```yaml
+# Use IAM roles, not access keys
+# Store secrets in AWS Secrets Manager
+# Enable encryption at rest
+# Use VPC endpoints for private builds
+# Enable CloudTrail for audit logging
+
+# Example: Secure buildspec.yml
+version: 0.2
+
+env:
+  secrets-manager:
+    API_KEY: ml-api:api-key
+    DB_PASSWORD: ml-api:db-password
+
+phases:
+  build:
+    commands:
+      - echo Using secure credentials from Secrets Manager
+      - python train.py --api-key $API_KEY
+```
+
+**Cost Optimization for CI/CD:**
+
+- **Use CodeBuild compute types** based on workload (smaller for tests, larger for training)
+- **Enable build caching** to speed up builds
+- **Use spot instances** for non-critical builds
+- **Set build timeouts** to prevent runaway costs
+- **Clean up old artifacts** automatically
 
 ### ML-Specific CI: Testing the Model and Data
 
